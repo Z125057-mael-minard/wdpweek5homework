@@ -21,8 +21,6 @@ function showQuestion() {
   const q = questions[currentQuestionIndex];
   questionText.textContent = q.question;
 
-   //INPUT YOUR CODE HERE
-   //HINT: Loop through each option for the current question
   q.options.forEach((option, index) => {
     // TODO:
     // 1. Create a button element
