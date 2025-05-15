@@ -54,7 +54,7 @@ function clearOptions() {
   // HINT
   // 1. Clear the contents of the options container
   for (const child of optionsContainer.children){
-    child.remove();
+    optionsContainer.removeChild(child);
   }
   nextBtn.disabled = true;
 }
