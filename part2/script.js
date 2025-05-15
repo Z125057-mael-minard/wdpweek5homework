@@ -7,7 +7,7 @@ const optionsContainer = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
 const resultBox = document.getElementById("result");
 
-fetch("questions.json")
+fetch("./questions.json")
   .then(res => res.json())
   .then(data => {
     questions = data;
@@ -24,12 +24,17 @@ function showQuestion() {
    //INPUT YOUR CODE HERE
    //HINT: Loop through each option for the current question
   q.options.forEach((option, index) => {
-  // TODO:
-  // 1. Create a button element
-  // 2. Set the button's text to the option
-  // 3. Add a class to style it
-  // 4. Add an onclick event that calls checkAnswer(index)
-  // 5. Add the button to the optionsContainer
+    // TODO:
+    // 1. Create a button element
+    const btn = document.createElement("btn");
+    // 2. Set the button's text to the option
+    btn.textContent = option;
+    // 3. Add a class to style it
+    btn.classList.add();
+    // 4. Add an onclick event that calls checkAnswer(index)
+    btn.addEventListener("onclick", checkAnswer(index));
+    // 5. Add the button to the optionsContainer
+    optionsContainer.appendChild(btn);
 });
 }
 
@@ -50,15 +55,26 @@ function clearOptions() {
   // INPUT YOUR CODE HERE
   // HINT
   // 1. Clear the contents of the options container
+  optionsContainer.children.foreach((child) => {
+    child.remove();
+  });
   // 2. Disable the Next button so users can't skip ahead
+  nextBtn.disable();
 }
 
 nextBtn.addEventListener("click", () => {
   // INPUT YOUR CODE HERE
   // HINT
   // 1. Move to the next question by increasing the question index
+  currentQuestionIndex++;
   // 2. If there are questions left, show the next one
+  if (currentQuestionIndex < questions.length){
+    questionText.textContent = questions[currentQuestionIndex];
+  }
   // 3. Otherwise, call a function to show the final result
+  else{
+    showResult();
+  }
 });
 
 
