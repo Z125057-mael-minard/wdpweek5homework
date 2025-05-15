@@ -55,11 +55,11 @@ function clearOptions() {
   // INPUT YOUR CODE HERE
   // HINT
   // 1. Clear the contents of the options container
-  optionsContainer.children.foreach((child) => {
+  for (const child of optionsContainer.children){
     child.remove();
-  });
+  }
   // 2. Disable the Next button so users can't skip ahead
-  nextBtn.disable();
+  nextBtn.disabled = true;
 }
 
 nextBtn.addEventListener("click", () => {
