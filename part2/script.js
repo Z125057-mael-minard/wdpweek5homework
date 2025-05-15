@@ -30,9 +30,9 @@ function showQuestion() {
     // 2. Set the button's text to the option
     btn.textContent = option;
     // 3. Add a class to style it
-    btn.classList.add();
+    btn.classList.add("option");
     // 4. Add an onclick event that calls checkAnswer(index)
-    btn.addEventListener("onclick", checkAnswer(index));
+    btn.addEventListener("click", checkAnswer(index));
     // 5. Add the button to the optionsContainer
     optionsContainer.appendChild(btn);
 });
