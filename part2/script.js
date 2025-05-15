@@ -66,7 +66,7 @@ nextBtn.addEventListener("click", () => {
   currentQuestionIndex++;
   // 2. If there are questions left, show the next one
   if (currentQuestionIndex < questions.length){
-    questionText.textContent = questions[currentQuestionIndex];
+    showQuestion();
   }
   // 3. Otherwise, call a function to show the final result
   else{
