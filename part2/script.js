@@ -58,7 +58,6 @@ function clearOptions() {
   for (const child of optionsContainer.children){
     child.remove();
   }
-  // 2. Disable the Next button so users can't skip ahead
   nextBtn.disabled = true;
 }
 
